@@ -26,7 +26,7 @@ const Home =()=>{
     },[])
 
     return(
-        <Container className="container">
+        <Container fixed className="container">
         <h2 className="ri">React Internship Assignment</h2>
         <Autocomplete className="ac"
          multiple

@@ -1,7 +1,10 @@
 .container{
     margin: 0;
     background: rgb(255, 255, 255)!important; 
-    width: 100%;
+    min-height: 45rem;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
 }
 
 .ri{
@@ -11,9 +14,6 @@
 
 .ac {
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) }
+    float: center;
+}
 
