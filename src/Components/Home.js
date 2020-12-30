@@ -3,10 +3,10 @@ import {Container} from '@material-ui/core'
 import TextField from '@material-ui/core/TextField';
 import {Autocomplete} from '@material-ui/lab'
 import axios from 'axios'
+import './Home.css'
 
 const Home =()=>{
 
-    const [lang,setLang] = useState('')
     
     const [ldata,setData] = useState([])
 
@@ -21,26 +21,21 @@ const Home =()=>{
         })
     }
 
-    const handlechange = name =>e=>{
-        e.preventDefault()
-        setLang({lang,[name]:e.target.value})
-        console.log(lang)
-    }
-     
     useEffect(()=>{
         loadLanguage()
     },[])
 
     return(
-        <Container fixed style={{"margin":"auto"}}>
-        <h1 style={{"text-align":"center"}}>Home</h1>
-        <Autocomplete
-         id="combo-box-demo"
+        <Container className="container">
+        <h2 className="ri">React Internship Assignment</h2>
+        <Autocomplete className="ac"
+         multiple
+         limitTags={2}
+         id="multiple-limit-tags"
          options={ldata}
          getOptionLabel={(option) => option.name}
-         style={{ width: 300 }}
-         renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
-         onChange={handlechange('boom')}
+         style={{ width: "15rem" }}
+         renderInput={(params) => <TextField {...params} label="Languages" variant="outlined" />}
          />       
         </Container>
         
